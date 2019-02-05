@@ -1,0 +1,14 @@
+version: '2'
+services:
+  sqlserver:
+    image: linsqlserver:latest 
+    hostname: 'svrsql'
+    restart: always
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: P@ssw0rd#2
+      MSSQL_PID: Standard
+    ports:
+      - '1433:1433'
+    volumes:
+      - /srv/docker-data/sqldata:/var/opt/mssql
